@@ -9,9 +9,6 @@
 **JavaScript**
 <img src="js.png" alt="TUT!" width="80px" height="50px">
 
-**CSS**
-<img src="css.png" alt="TUT!" width="40px" height="50px">
-
 **p5**
 <img src="p5.png" alt="TUT!" width="40px" height="50px">
 
