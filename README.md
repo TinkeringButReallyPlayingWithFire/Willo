@@ -16,7 +16,7 @@
 
  <br>
 
-NOTE:- This is a very early build of my Willo project as I attempt to reclaim my finialised version (backing up is so very important and is a lesson I have indeed learned the hard way!)
+NOTE:- This is a very early build of my Willo project as I attempt to reclaim my finialised version (backing up my backups is very important and is a lesson I have indeed learned the hard way!)
 
 "Willo" is my final project submission for my Introduction to Programming I module, as part of my BSc Computer Science degree.
 
