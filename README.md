@@ -20,9 +20,9 @@ NOTE:- This is a very early build of my Willo project as I attempt to reclaim my
 
 "Willo" is my final project submission for my Introduction to Programming I module, as part of my BSc Computer Science degree.
 
-Willo is a 1-level (WIP) side-scroller that was an introduction to programming, but students were allowed boundless levels of creativity and freedom with the concept and implementation, within a 1-level format.
+Willo is a 1-level (WIP) side-scroller that was an introduction to programming, but students were allowed boundless levels of creativity and freedom with the concept and scoping implementation to a 1-level format.
 
-Alas a lot is still missing in this build version but its better to showcase the direction the game was heading and its still somewhat playable! - sound effects, ambiance, main music, various added animations/ mechanics, death mechanics, a final boss and the end screen have unfortunetly not been developed in this build version - I will update as soon as I am able to retrieve the files.
+Alas a lot is still missing in this build but its better to showcase the direction the game was heading and its still somewhat playable! - sound effects, ambiance, main music, various added animations/ mechanics, death mechanics, a final boss and the end screen have unfortunetly not been developed in this build - I will update as soon as I am able to retrieve the files.
 
 All assets were created by me in p5.js.
 
