@@ -1,0 +1,172 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+}
+
+
+
+.anIllusion {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -500;
+
+}
+
+#defaultCanvas0 {
+    position: absolute;
+    left: 24%;
+    top: 20%;
+}
+
+h1 {
+    position: absolute;
+    left: 45%;
+    font-size: 5rem;
+    color: #e9c367;
+}
+
+/* from Codepen */
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+html {
+  background: radial-gradient(#000, #111);
+  height: 100%;
+}
+
+.keys {
+    position: relative;
+    display: inline-block;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  width: 500px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  transform: translateX(20%);
+}
+
+.arr {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  background: grey;
+  color: white;
+  font-size: 50px;
+  border-right: 10px solid #4d4d4d;
+  border-bottom: 10px solid #4d4d4d;
+  border-left: 10px solid #5a5a5a;
+  border-top: 10px solid #676767;
+  display: inline-block;
+  margin: 5px;
+  transition: all 0.05s linear;
+  user-select: none;
+}
+.arr:active {
+  border-bottom: 8px solid #4d4d4d;
+  text-shadow: 0 0 10px white, 0 0 10px white, 0 0 20px white;
+  transform: translate(0, 2px);
+}
+
+.up {
+  position: relative;
+  top: -4px;
+}
+
+.pressed {
+  border-bottom: 8px solid #4d4d4d;
+  text-shadow: 0 0 10px white;
+  transform: translate(0, 2px);
+}
+
+.names {
+  font-size: 18px;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 10px white;
+}
+
+.b {
+  color: blue;
+  text-shadow: 0 0 10px blue, 0 0 10px blue, 0 0 10px blue, 0 0 10px blue;
+  font-size: 100px;
+  font-family: serif;
+}
+
+.a {
+  color: yellow;
+  text-shadow: 0 0 10px yellow, 0 0 10px yellow, 0 0 10px yellow, 0 0 10px yellow;
+  font-size: 100px;
+  font-family: serif;
+}
+
+.keysContainer {
+    position: fixed;
+    padding: 1%;
+    transform: scale(0.5);
+    top: 72%;
+    left: 16%;
+    background-color: red;
+    width: 30%;
+    border-radius: 5%;
+    background-color: #5b77f5;
+
+
+}
+
+.instructionsText {
+    position: absolute;
+    display: inline-flex;
+    margin-top: 10%;
+    flex-direction: row;
+    font-size: 3rem;
+    color: white;
+}
+
+.spacebarContainer {
+    position: fixed;
+    padding: 1%;
+
+    display: inline-flex;
+    flex-direction: row;
+    left: 44%;
+    top: 80.5%;
+    width: 12%;
+    background-color: #5b77f5;
+    border-radius: 5%;
+
+}
+
+.spacebarImage{
+    position: relative;
+    display: inline-block;
+    transform: scale(4);
+    margin-top: 230%;
+    margin-left: 200%;
+}
+.instructionsTextSB {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.f5Container {
+    position: fixed;
+    padding: 1%;
+    display: inline-flex;
+    flex-direction: row;
+    color: white;
+    font-size: 1.4rem;
+    left: 62%;
+    top: 80.5%;
+    width: 12%;
+    background-color: #5b77f5;
+    border-radius: 5%;
+}
+
+
+.contentContainer {
+    position: relative;
+    display: block;
+}

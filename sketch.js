@@ -22,9 +22,7 @@ var clouds;
 var mountains;
 var trees_x;
 
-
-function setup()
-{
+function setup() {
   createCanvas(1024, 576);
   floorPos_y = (height * 3) / 4;
   gameChar_x = width / 3;
@@ -34,24 +32,22 @@ function setup()
   sun = {
     x: 150,
     y: 200,
-    diameter: 80
+    diameter: 80,
   };
-
-  //TASK: intialise a moon object with an extra property for brightness
   //initalise the sun
   moon = {
     x: 750,
     y: 70,
-    diameter: 80
+    diameter: 80,
   };
 
   //set the initial darkness
   darkness = 0;
 
-  // Variable to control the background scrolling.
+  //  control the background scrolling.
   scrollPos = 0;
 
-  // Variable to store the real position of the gameChar in the game
+  //  store the real position of the gameChar in the game
   // world. Needed for collision detection.
   gameChar_world_x = gameChar_x - scrollPos;
 
@@ -61,30 +57,11 @@ function setup()
   isFalling = false;
   isPlummeting = false;
 
-  // Initialise arrays of scenery objects.
+  //  arrays of scenery objects.
 
   trees_x = [
-    -1950,
-    -1850,
-    -1750,
-    -1400,
-    -1300,
-    -800,
-    50,
-    600,
-    900,
-    1300,
-    1700,
-    2100,
-    3800,
-    3850,
-    3950,
-    4100,
-    4190,
-    4290,
-    4290,
-    4390,
-    4390
+    -1950, -1850, -1750, -1400, -1300, -800, 50, 600, 900, 1300, 1700, 2100,
+    3800, 3850, 3950, 4100, 4190, 4290, 4290, 4390, 4390,
   ];
   treePos_x = width / 2;
   treePos_y = height / 2;
@@ -99,23 +76,23 @@ function setup()
     {
       x_pos_crownOfEternalPyre1: 580,
       y_pos_crownOfEternalPyre1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre2: 550,
       y_pos_crownOfEternalPyre2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre3: 610,
       y_pos_crownOfEternalPyre3: 310,
-      isFound: false
+      isFound: false,
     },
 
     {
       x_pos_auraOfLatentFlame: 580,
       y_pos_auraOfLatentFlame: 375,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_JulTerra: 580, y_pos_JulTerra: 375, isFound: false },
@@ -130,17 +107,17 @@ function setup()
     {
       x_pos_aFoolAndTheirSoul1: 565,
       y_pos_aFoolAndTheirSoul1: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul2: 595,
       y_pos_aFoolAndTheirSoul2: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul3: 580,
       y_pos_aFoolAndTheirSoul3: 367,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_veilOfDivinity: 540, y_pos_veilOfDivinity: 341, isFound: false },
@@ -152,17 +129,17 @@ function setup()
     {
       x_pos_theWatchersReturn1: 580,
       y_pos_theWatchersReturn1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn2: 550,
       y_pos_theWatchersReturn2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn3: 610,
       y_pos_theWatchersReturn3: 310,
-      isFound: false
+      isFound: false,
     },
 
     //Jagged peaks of Mount Vel'tor
@@ -173,23 +150,23 @@ function setup()
     {
       x_pos_crownOfEternalPyre1: -480,
       y_pos_crownOfEternalPyre1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre2: -450,
       y_pos_crownOfEternalPyre2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre3: -510,
       y_pos_crownOfEternalPyre3: 310,
-      isFound: false
+      isFound: false,
     },
 
     {
       x_pos_auraOfLatentFlame: -480,
       y_pos_auraOfLatentFlame: 375,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_JulTerra: -480, y_pos_JulTerra: 375, isFound: false },
@@ -204,17 +181,17 @@ function setup()
     {
       x_pos_aFoolAndTheirSoul1: -465,
       y_pos_aFoolAndTheirSoul1: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul2: -495,
       y_pos_aFoolAndTheirSoul2: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul3: -480,
       y_pos_aFoolAndTheirSoul3: 367,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_veilOfDivinity: -520, y_pos_veilOfDivinity: 341, isFound: false },
@@ -226,17 +203,17 @@ function setup()
     {
       x_pos_theWatchersReturn1: -480,
       y_pos_theWatchersReturn1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn2: -450,
       y_pos_theWatchersReturn2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn3: -510,
       y_pos_theWatchersReturn3: 310,
-      isFound: false
+      isFound: false,
     },
 
     //Shroud of the Black Mist
@@ -247,23 +224,23 @@ function setup()
     {
       x_pos_crownOfEternalPyre1: -1280,
       y_pos_crownOfEternalPyre1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre2: -1250,
       y_pos_crownOfEternalPyre2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre3: -1310,
       y_pos_crownOfEternalPyre3: 310,
-      isFound: false
+      isFound: false,
     },
 
     {
       x_pos_auraOfLatentFlame: -1280,
       y_pos_auraOfLatentFlame: 375,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_JulTerra: -1280, y_pos_JulTerra: 375, isFound: false },
@@ -278,17 +255,17 @@ function setup()
     {
       x_pos_aFoolAndTheirSoul1: -1265,
       y_pos_aFoolAndTheirSoul1: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul2: -1295,
       y_pos_aFoolAndTheirSoul2: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul3: -1280,
       y_pos_aFoolAndTheirSoul3: 367,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_veilOfDivinity: -1320, y_pos_veilOfDivinity: 341, isFound: false },
@@ -300,17 +277,17 @@ function setup()
     {
       x_pos_theWatchersReturn1: -1280,
       y_pos_theWatchersReturn1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn2: -1250,
       y_pos_theWatchersReturn2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn3: -1310,
       y_pos_theWatchersReturn3: 310,
-      isFound: false
+      isFound: false,
     },
 
     //Grove of Horrors
@@ -321,23 +298,23 @@ function setup()
     {
       x_pos_crownOfEternalPyre1: -1780,
       y_pos_crownOfEternalPyre1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre2: -1750,
       y_pos_crownOfEternalPyre2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre3: -1810,
       y_pos_crownOfEternalPyre3: 310,
-      isFound: false
+      isFound: false,
     },
 
     {
       x_pos_auraOfLatentFlame: -1780,
       y_pos_auraOfLatentFlame: 375,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_JulTerra: -1780, y_pos_JulTerra: 375, isFound: false },
@@ -352,17 +329,17 @@ function setup()
     {
       x_pos_aFoolAndTheirSoul1: -1765,
       y_pos_aFoolAndTheirSoul1: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul2: -1795,
       y_pos_aFoolAndTheirSoul2: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul3: -1780,
       y_pos_aFoolAndTheirSoul3: 367,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_veilOfDivinity: -1820, y_pos_veilOfDivinity: 341, isFound: false },
@@ -374,17 +351,17 @@ function setup()
     {
       x_pos_theWatchersReturn1: -1780,
       y_pos_theWatchersReturn1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn2: -1750,
       y_pos_theWatchersReturn2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn3: -1810,
       y_pos_theWatchersReturn3: 310,
-      isFound: false
+      isFound: false,
     },
 
     //The Steps of Fate - Begginning
@@ -396,23 +373,23 @@ function setup()
     {
       x_pos_crownOfEternalPyre1: 1380,
       y_pos_crownOfEternalPyre1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre2: 1350,
       y_pos_crownOfEternalPyre2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre3: 1410,
       y_pos_crownOfEternalPyre3: 310,
-      isFound: false
+      isFound: false,
     },
 
     {
       x_pos_auraOfLatentFlame: 1380,
       y_pos_auraOfLatentFlame: 375,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_JulTerra: 1380, y_pos_JulTerra: 375, isFound: false },
@@ -427,17 +404,17 @@ function setup()
     {
       x_pos_aFoolAndTheirSoul1: 1365,
       y_pos_aFoolAndTheirSoul1: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul2: 1395,
       y_pos_aFoolAndTheirSoul2: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul3: 1380,
       y_pos_aFoolAndTheirSoul3: 367,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_veilOfDivinity: 1340, y_pos_veilOfDivinity: 341, isFound: false },
@@ -449,17 +426,17 @@ function setup()
     {
       x_pos_theWatchersReturn1: 1380,
       y_pos_theWatchersReturn1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn2: 1350,
       y_pos_theWatchersReturn2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn3: 1410,
       y_pos_theWatchersReturn3: 310,
-      isFound: false
+      isFound: false,
     },
 
     //The Steps of Fate - First Step
@@ -471,23 +448,23 @@ function setup()
     {
       x_pos_crownOfEternalPyre1: 1680,
       y_pos_crownOfEternalPyre1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre2: 1650,
       y_pos_crownOfEternalPyre2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre3: 1710,
       y_pos_crownOfEternalPyre3: 310,
-      isFound: false
+      isFound: false,
     },
 
     {
       x_pos_auraOfLatentFlame: 1680,
       y_pos_auraOfLatentFlame: 375,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_JulTerra: 1680, y_pos_JulTerra: 375, isFound: false },
@@ -502,17 +479,17 @@ function setup()
     {
       x_pos_aFoolAndTheirSoul1: 1665,
       y_pos_aFoolAndTheirSoul1: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul2: 1695,
       y_pos_aFoolAndTheirSoul2: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul3: 1680,
       y_pos_aFoolAndTheirSoul3: 367,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_veilOfDivinity: 1640, y_pos_veilOfDivinity: 341, isFound: false },
@@ -524,17 +501,17 @@ function setup()
     {
       x_pos_theWatchersReturn1: 1680,
       y_pos_theWatchersReturn1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn2: 1650,
       y_pos_theWatchersReturn2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn3: 1710,
       y_pos_theWatchersReturn3: 310,
-      isFound: false
+      isFound: false,
     },
 
     //The Steps of Fate - Divinitys Reach
@@ -545,23 +522,23 @@ function setup()
     {
       x_pos_crownOfEternalPyre1: 2480,
       y_pos_crownOfEternalPyre1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre2: 2450,
       y_pos_crownOfEternalPyre2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre3: 2510,
       y_pos_crownOfEternalPyre3: 310,
-      isFound: false
+      isFound: false,
     },
 
     {
       x_pos_auraOfLatentFlame: 2480,
       y_pos_auraOfLatentFlame: 375,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_JulTerra: 2480, y_pos_JulTerra: 375, isFound: false },
@@ -576,17 +553,17 @@ function setup()
     {
       x_pos_aFoolAndTheirSoul1: 2465,
       y_pos_aFoolAndTheirSoul1: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul2: 2495,
       y_pos_aFoolAndTheirSoul2: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul3: 2480,
       y_pos_aFoolAndTheirSoul3: 367,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_veilOfDivinity: 2440, y_pos_veilOfDivinity: 341, isFound: false },
@@ -598,17 +575,17 @@ function setup()
     {
       x_pos_theWatchersReturn1: 2480,
       y_pos_theWatchersReturn1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn2: 2450,
       y_pos_theWatchersReturn2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn3: 2510,
       y_pos_theWatchersReturn3: 310,
-      isFound: false
+      isFound: false,
     },
 
     //Never one, without the other..., isFound: false },
@@ -618,23 +595,23 @@ function setup()
     {
       x_pos_crownOfEternalPyre1: 2580,
       y_pos_crownOfEternalPyre1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre2: 2550,
       y_pos_crownOfEternalPyre2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre3: 2610,
       y_pos_crownOfEternalPyre3: 310,
-      isFound: false
+      isFound: false,
     },
 
     {
       x_pos_auraOfLatentFlame: 2580,
       y_pos_auraOfLatentFlame: 375,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_JulTerra: 2580, y_pos_JulTerra: 375, isFound: false },
@@ -649,17 +626,17 @@ function setup()
     {
       x_pos_aFoolAndTheirSoul1: 2565,
       y_pos_aFoolAndTheirSoul1: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul2: 2595,
       y_pos_aFoolAndTheirSoul2: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul3: 2580,
       y_pos_aFoolAndTheirSoul3: 367,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_veilOfDivinity: 2540, y_pos_veilOfDivinity: 341, isFound: false },
@@ -671,17 +648,17 @@ function setup()
     {
       x_pos_theWatchersReturn1: 2580,
       y_pos_theWatchersReturn1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn2: 2550,
       y_pos_theWatchersReturn2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn3: 2610,
       y_pos_theWatchersReturn3: 310,
-      isFound: false
+      isFound: false,
     },
 
     //Fissure of the Black Moon - Ascension
@@ -692,23 +669,23 @@ function setup()
     {
       x_pos_crownOfEternalPyre1: 3180,
       y_pos_crownOfEternalPyre1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre2: 3150,
       y_pos_crownOfEternalPyre2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre3: 3210,
       y_pos_crownOfEternalPyre3: 310,
-      isFound: false
+      isFound: false,
     },
 
     {
       x_pos_auraOfLatentFlame: 3180,
       y_pos_auraOfLatentFlame: 375,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_JulTerra: 3180, y_pos_JulTerra: 375, isFound: false },
@@ -723,17 +700,17 @@ function setup()
     {
       x_pos_aFoolAndTheirSoul1: 3165,
       y_pos_aFoolAndTheirSoul1: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul2: 3195,
       y_pos_aFoolAndTheirSoul2: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul3: 3180,
       y_pos_aFoolAndTheirSoul3: 367,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_veilOfDivinity: 3140, y_pos_veilOfDivinity: 341, isFound: false },
@@ -745,17 +722,17 @@ function setup()
     {
       x_pos_theWatchersReturn1: 3180,
       y_pos_theWatchersReturn1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn2: 3150,
       y_pos_theWatchersReturn2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn3: 3210,
       y_pos_theWatchersReturn3: 310,
-      isFound: false
+      isFound: false,
     },
 
     //He took an axe and split himself, right down the middle...
@@ -766,23 +743,23 @@ function setup()
     {
       x_pos_crownOfEternalPyre1: 3480,
       y_pos_crownOfEternalPyre1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre2: 3450,
       y_pos_crownOfEternalPyre2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_crownOfEternalPyre3: 3510,
       y_pos_crownOfEternalPyre3: 310,
-      isFound: false
+      isFound: false,
     },
 
     {
       x_pos_auraOfLatentFlame: 3480,
       y_pos_auraOfLatentFlame: 375,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_JulTerra: 3480, y_pos_JulTerra: 375, isFound: false },
@@ -797,17 +774,17 @@ function setup()
     {
       x_pos_aFoolAndTheirSoul1: 3465,
       y_pos_aFoolAndTheirSoul1: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul2: 3495,
       y_pos_aFoolAndTheirSoul2: 383,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_aFoolAndTheirSoul3: 3480,
       y_pos_aFoolAndTheirSoul3: 367,
-      isFound: false
+      isFound: false,
     },
 
     { x_pos_veilOfDivinity: 3440, y_pos_veilOfDivinity: 341, isFound: false },
@@ -819,18 +796,18 @@ function setup()
     {
       x_pos_theWatchersReturn1: 3480,
       y_pos_theWatchersReturn1: 295,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn2: 3450,
       y_pos_theWatchersReturn2: 310,
-      isFound: false
+      isFound: false,
     },
     {
       x_pos_theWatchersReturn3: 3510,
       y_pos_theWatchersReturn3: 310,
-      isFound: false
-    }
+      isFound: false,
+    },
   ];
 
   //CLOUDS
@@ -852,7 +829,7 @@ function setup()
     { revPos_x: -1950, revPos_y: 125 },
     { revPos_x: -3050, revPos_y: 150 },
     { revPos_x: -3500, revPos_y: 130 },
-    { revPos_x: -3550, revPos_y: 100 }
+    { revPos_x: -3550, revPos_y: 100 },
   ];
 
   revenantCloudBelow = [
@@ -865,7 +842,7 @@ function setup()
     { revPos_x: 3400, revPos_y: 200 },
     { revPos_x: -400, revPos_y: 180 },
     { revPos_x: -420, revPos_y: 190 },
-    { revPos_x: -400, revPos_y: 200 }
+    { revPos_x: -400, revPos_y: 200 },
   ];
 
   revenantFurthestReaches = [
@@ -880,7 +857,7 @@ function setup()
     { revPos_x: 3700, revPos_y: 100 },
     { revPos_x: -800, revPos_y: 80 },
     { revPos_x: -820, revPos_y: 80 },
-    { revPos_x: -800, revPos_y: 100 }
+    { revPos_x: -800, revPos_y: 100 },
   ];
 
   revenantCloudFragment1 = [{ revPos_x: 450, revPos_y: 150 }];
@@ -892,13 +869,13 @@ function setup()
     x: 345,
     y: floorPos_y,
     height: 320,
-    width: 230
+    width: 230,
   };
   mountain2 = {
     x: 285,
     y: floorPos_y,
     height: 200,
-    width: 130
+    width: 130,
   };
 
   mountains = [
@@ -924,7 +901,7 @@ function setup()
     { pos_x: -1140, pos_y: floorPos_y },
     { pos_x: -1200, pos_y: floorPos_y },
     { pos_x: -1610, pos_y: floorPos_y },
-    { pos_x: -1670, pos_y: floorPos_y }
+    { pos_x: -1670, pos_y: floorPos_y },
   ];
 
   //CANYON
@@ -939,7 +916,7 @@ function setup()
     { x_pos: 3800, lightTouchedMouth: 130 },
     { x_pos: 3900, lightTouchedMouth: 130 },
     { x_pos: 4000, lightTouchedMouth: 130 },
-    { x_pos: -910, lightTouchedMouth: 130 }
+    { x_pos: -910, lightTouchedMouth: 130 },
   ];
 
   //SNOW
@@ -954,7 +931,7 @@ function setup()
     { x_pos: 1745, y_pos: floorPos_y, coverage: 278 },
     { x_pos: 2145, y_pos: floorPos_y, coverage: 278 },
     { x_pos: 3101, y_pos: floorPos_y, coverage: 1398 },
-    { x_pos: 5630, y_pos: floorPos_y, coverage: 3000 }
+    { x_pos: 5630, y_pos: floorPos_y, coverage: 3000 },
   ];
 
   //Stones of Earth and Moon
@@ -1064,7 +1041,7 @@ function setup()
     { x_pos: -1845, y_pos: 430 },
     { x_pos: -1857, y_pos: 390 },
     { x_pos: -1845, y_pos: 350 },
-    { x_pos: -1735, y_pos: 350 }
+    { x_pos: -1735, y_pos: 350 },
   ];
 
   stoneOfMoon = [
@@ -1173,12 +1150,11 @@ function setup()
     { x_pos: -1835, y_pos: 430 },
     { x_pos: -1847, y_pos: 390 },
     { x_pos: -1835, y_pos: 350 },
-    { x_pos: -1725, y_pos: 350 }
+    { x_pos: -1725, y_pos: 350 },
   ];
 }
 
-function draw()
-{
+function draw() {
   background(50, 100, 155);
   fill(200, 215, 205, map(gameChar_x, 0, width, 0, 200));
   rect(0, 0, width, height);
@@ -1192,7 +1168,6 @@ function draw()
 
   sun.y = map(gameChar_x, 150, width, 70, floorPos_y + 200);
 
-  //TASK: you'll need to draw the moon too. Make sure you use brightness to adjust the colour
   fill(255, 255, 255, map(gameChar_x, 500, width, 0, 255));
   ellipse(moon.x, moon.y, moon.diameter + 7);
   fill(255, 255, 255, map(gameChar_x, 500, width, 0, 255));
@@ -1274,32 +1249,26 @@ function draw()
   gameChar_world_x = gameChar_x - scrollPos;
 }
 
-
 // ---------------------
 // Key control functions
 // ---------------------
 
-function keyPressed(){
-
-if (keyCode == 37) {
-  isLeft = true;
-} else if (keyCode == 39) {
-  isRight = true;
-} else if (keyCode == 32 && gameChar_y == floorPos_y) {
-  gameChar_y -= 100;
+function keyPressed() {
+  if (keyCode == 37) {
+    isLeft = true;
+  } else if (keyCode == 39) {
+    isRight = true;
+  } else if (keyCode == 32 && gameChar_y == floorPos_y) {
+    gameChar_y -= 100;
+  }
 }
 
-}
-
-function keyReleased()
-{
-
-	if (keyCode == 37) {
+function keyReleased() {
+  if (keyCode == 37) {
     isLeft = false;
   } else if (keyCode == 39) {
     isRight = false;
   }
-
 }
 
 // ------------------------------
@@ -1308,13 +1277,10 @@ function keyReleased()
 
 // Function to draw the game character.
 
-function drawGameChar()
-{
+function drawGameChar() {
   // draw game character
   //the game character
   if (isLeft && isFalling) {
-    // add your jumping-left code
-
     //Candle body floor shadow
     fill(38, 30, 11);
     ellipse(gameChar_x + 3, gameChar_y, 18, 10);
@@ -1370,7 +1336,6 @@ function drawGameChar()
     fill(181, 84, 65);
     ellipse(gameChar_x, gameChar_y - 70, 3, 3);
   } else if (isRight && isFalling) {
-    // add your jumping-right code
     //Candle body floor shadow
     fill(38, 30, 11);
     ellipse(gameChar_x - 3, gameChar_y - 8, 8, 10);
@@ -1426,7 +1391,6 @@ function drawGameChar()
     fill(181, 84, 65);
     ellipse(gameChar_x, gameChar_y - 70, 3, 3);
   } else if (isLeft) {
-    // add your walking left code
     //Candle body floor shadow
     fill(38, 30, 11);
     ellipse(gameChar_x + 3, gameChar_y, 18, 10);
@@ -1471,7 +1435,6 @@ function drawGameChar()
     ellipse(gameChar_x + 8, gameChar_y - 73, 3, 3);
     ellipse(gameChar_x + 16, gameChar_y - 77, 3, 3);
   } else if (isRight) {
-    // add your walking right code
     //Candle body floor shadow
     fill(38, 30, 11);
     ellipse(gameChar_x - 5, gameChar_y, 18, 10);
@@ -1516,8 +1479,6 @@ function drawGameChar()
     ellipse(gameChar_x - 8, gameChar_y - 73, 3, 3);
     ellipse(gameChar_x - 16, gameChar_y - 77, 3, 3);
   } else if (isFalling || isPlummeting) {
-    // add your jumping facing forwards code
-    //Add your code here ...
     //Candle body floor shadow
     fill(38, 30, 11);
     ellipse(gameChar_x - 3, gameChar_y - 8, 8, 10);
@@ -1571,7 +1532,6 @@ function drawGameChar()
     fill(181, 84, 65);
     ellipse(gameChar_x, gameChar_y - 70, 3, 3);
   } else {
-    // add your standing front facing code
     //Candle body floor shadow
     fill(38, 30, 11);
     ellipse(gameChar_x - 2, gameChar_y, 18, 10);
@@ -1625,24 +1585,9 @@ function drawClouds() {
   for (var i = 0; i < revenantCloud.length; i++) {
     //draw cloud - revenant
     fill(230, 210, 210);
-    ellipse(
-      revenantCloud[i].revPos_x,
-      revenantCloud[i].revPos_y,
-      190,
-      70
-    );
-    ellipse(
-      revenantCloud[i].revPos_x,
-      revenantCloud[i].revPos_y,
-      180,
-      30
-    );
-    ellipse(
-      revenantCloud[i].revPos_x,
-      revenantCloud[i].revPos_y,
-      280,
-      10
-    );
+    ellipse(revenantCloud[i].revPos_x, revenantCloud[i].revPos_y, 190, 70);
+    ellipse(revenantCloud[i].revPos_x, revenantCloud[i].revPos_y, 180, 30);
+    ellipse(revenantCloud[i].revPos_x, revenantCloud[i].revPos_y, 280, 10);
   }
 
   for (var i = 0; i < revenantCloudBelow.length; i++) {
@@ -1692,7 +1637,6 @@ function drawClouds() {
   }
 }
 
-
 // Function to draw mountains objects.
 function drawMountains() {
   for (var i = 0; i < mountains.length; i++) {
@@ -1715,355 +1659,238 @@ function drawMountains() {
       mountains[i].pos_y - mountain2.height
     );
   }
-
 }
 
-
 // Function to draw trees objects.
-	function drawTrees() {
-    for (var i = 0; i < trees_x.length; i++) {
-      //3. a tree
-      //... add your code here
-      //treeeeees
-      tree = {
-        x: treePos_x - 20,
-        y: treePos_y - 56,
-        flowering: 110,
-        trunk_width: 50,
-        trunk_height: 100,
-        leaves: 50
-      };
+function drawTrees() {
+  for (var i = 0; i < trees_x.length; i++) {
+    //3. a tree
+    //treeeeees
+    tree = {
+      x: treePos_x - 20,
+      y: treePos_y - 56,
+      flowering: 110,
+      trunk_width: 50,
+      trunk_height: 100,
+      leaves: 50,
+    };
 
-      fill(49, 18, 11, map(gameChar_x, 200, width, 150, 300));
-      rect(trees_x[i] + 30, tree.y + 100, tree.trunk_width, tree.trunk_height);
+    fill(49, 18, 11, map(gameChar_x, 200, width, 150, 300));
+    rect(trees_x[i] + 30, tree.y + 100, tree.trunk_width, tree.trunk_height);
 
-      //Shackles of Woe
-      fill(51, 31, 50, map(gameChar_x, 200, width, 150, 300));
-      ellipse(trees_x[i] + 13, tree.y + 135, 20, 20);
-      ellipse(trees_x[i] + 26, tree.y + 120, 20, 20);
-      ellipse(trees_x[i], tree.y + 150, 20, 20);
-      ellipse(trees_x[i], tree.y + 170, 20, 20);
-      ellipse(trees_x[i], tree.y + 190, 20, 20);
-      push();
-      translate(110, 310);
-      ellipse(trees_x[i] - 13, tree.y - 135, 20, 20);
-      ellipse(trees_x[i] - 26, tree.y - 120, 20, 20);
-      ellipse(trees_x[i], tree.y - 150, 20, 20);
-      ellipse(trees_x[i], tree.y - 170, 20, 20);
-      ellipse(trees_x[i], tree.y - 190, 20, 20);
-      pop();
+    //Shackles of Woe
+    fill(51, 31, 50, map(gameChar_x, 200, width, 150, 300));
+    ellipse(trees_x[i] + 13, tree.y + 135, 20, 20);
+    ellipse(trees_x[i] + 26, tree.y + 120, 20, 20);
+    ellipse(trees_x[i], tree.y + 150, 20, 20);
+    ellipse(trees_x[i], tree.y + 170, 20, 20);
+    ellipse(trees_x[i], tree.y + 190, 20, 20);
+    push();
+    translate(110, 310);
+    ellipse(trees_x[i] - 13, tree.y - 135, 20, 20);
+    ellipse(trees_x[i] - 26, tree.y - 120, 20, 20);
+    ellipse(trees_x[i], tree.y - 150, 20, 20);
+    ellipse(trees_x[i], tree.y - 170, 20, 20);
+    ellipse(trees_x[i], tree.y - 190, 20, 20);
+    pop();
 
-      fill(200, map(gameChar_x, 100, width, 240, 150), 170);
-      rect(trees_x[i] - 7, tree.y - 7, 125, 125, 10);
-      fill(140, 80, 100, map(gameChar_x, 200, width, 150, 300));
-      rect(trees_x[i], tree.y, tree.flowering, tree.flowering);
+    fill(200, map(gameChar_x, 100, width, 240, 150), 170);
+    rect(trees_x[i] - 7, tree.y - 7, 125, 125, 10);
+    fill(140, 80, 100, map(gameChar_x, 200, width, 150, 300));
+    rect(trees_x[i], tree.y, tree.flowering, tree.flowering);
 
-      //Gaze which burns the heavens...
-      fill(122, 16, 122, map(gameChar_x, 0, width, 0, 200));
-      ellipse(trees_x[i] + 55, tree.y + 40, 60, 60);
-      //Seep through depths of darkness...
-      fill(214, 245, 244);
-      ellipse(trees_x[i] + 55, tree.y + 40, 25, 35);
-      fill(199, 232, 232);
-      ellipse(trees_x[i] + 55, tree.y + 40, 10, 20);
+    //Gaze which burns the heavens...
+    fill(122, 16, 122, map(gameChar_x, 0, width, 0, 200));
+    ellipse(trees_x[i] + 55, tree.y + 40, 60, 60);
+    //Seep through depths of darkness...
+    fill(214, 245, 244);
+    ellipse(trees_x[i] + 55, tree.y + 40, 25, 35);
+    fill(199, 232, 232);
+    ellipse(trees_x[i] + 55, tree.y + 40, 10, 20);
 
-      //Watchers, ever knowing...
-      fill(214, 245, 244);
-      ellipse(trees_x[i] + 10, tree.y + 40, 15, 15);
-      ellipse(trees_x[i] + 20, tree.y + 20, 15, 15);
-      ellipse(trees_x[i] + 20, tree.y + 60, 15, 15);
+    //Watchers, ever knowing...
+    fill(214, 245, 244);
+    ellipse(trees_x[i] + 10, tree.y + 40, 15, 15);
+    ellipse(trees_x[i] + 20, tree.y + 20, 15, 15);
+    ellipse(trees_x[i] + 20, tree.y + 60, 15, 15);
 
-      push();
-      translate(112, 80);
-      ellipse(trees_x[i] - 10, tree.y - 40, 15, 15);
-      ellipse(trees_x[i] - 20, tree.y - 20, 15, 15);
-      ellipse(trees_x[i] - 20, tree.y - 60, 15, 15);
-      pop();
-      //ever silent...
-      fill(199, 232, 232);
-      ellipse(trees_x[i] + 10, tree.y + 40, 5, 10);
-      ellipse(trees_x[i] + 20, tree.y + 20, 5, 10);
-      ellipse(trees_x[i] + 20, tree.y + 60, 5, 10);
+    push();
+    translate(112, 80);
+    ellipse(trees_x[i] - 10, tree.y - 40, 15, 15);
+    ellipse(trees_x[i] - 20, tree.y - 20, 15, 15);
+    ellipse(trees_x[i] - 20, tree.y - 60, 15, 15);
+    pop();
+    //ever silent...
+    fill(199, 232, 232);
+    ellipse(trees_x[i] + 10, tree.y + 40, 5, 10);
+    ellipse(trees_x[i] + 20, tree.y + 20, 5, 10);
+    ellipse(trees_x[i] + 20, tree.y + 60, 5, 10);
 
-      ellipse(trees_x[i] + 102, tree.y + 40, 5, 10);
-      ellipse(trees_x[i] + 92, tree.y + 20, 5, 10);
-      ellipse(trees_x[i] + 92, tree.y + 60, 5, 10);
+    ellipse(trees_x[i] + 102, tree.y + 40, 5, 10);
+    ellipse(trees_x[i] + 92, tree.y + 20, 5, 10);
+    ellipse(trees_x[i] + 92, tree.y + 60, 5, 10);
 
-      //Sight through oblivion
-      fill(51, 71);
-      rect(trees_x[i] - 7, tree.y + 10, 125, 60, 10);
-    }
+    //Sight through oblivion
+    fill(51, 71);
+    rect(trees_x[i] - 7, tree.y + 10, 125, 60, 10);
   }
+}
 
- //Function to draw the Bonfire of the Ashen One
- function drawBonfireOfAshenOne() {
-                                    //DECORATION - Bonfire of the ashen one
-                                    push();
-                                    //Decorative - Bonfire of the ashen one
-                                    fill(77, 57, 46);
-                                    translate(580, 400);
-                                    noStroke();
-                                    for (let i = 0; i < 10; i++) {
-                                      ellipse(0, 30, 110, 10);
-                                      rotate(PI / 5);
-                                    }
-                                    pop();
+//Function to draw the Bonfire of the Ashen One
+function drawBonfireOfAshenOne() {
+  //DECORATION - Bonfire of the ashen one
+  push();
+  //Decorative - Bonfire of the ashen one
+  fill(77, 57, 46);
+  translate(580, 400);
+  noStroke();
+  for (let i = 0; i < 10; i++) {
+    ellipse(0, 30, 110, 10);
+    rotate(PI / 5);
+  }
+  pop();
 
-                                    //DECORATION - Bonfire of the ashen one - First steps
-                                    push();
-                                    //Decorative - Bonfire of the ashen one
-                                    fill(77, 57, 46);
-                                    translate(1380, 400);
-                                    noStroke();
-                                    for (let i = 0; i < 10; i++) {
-                                      ellipse(0, 30, 110, 10);
-                                      rotate(PI / 5);
-                                    }
-                                    pop();
+  //DECORATION - Bonfire of the ashen one - First steps
+  push();
+  //Decorative - Bonfire of the ashen one
+  fill(77, 57, 46);
+  translate(1380, 400);
+  noStroke();
+  for (let i = 0; i < 10; i++) {
+    ellipse(0, 30, 110, 10);
+    rotate(PI / 5);
+  }
+  pop();
 
-                                    //DECORATION - Bonfire of the ashen one - Steps to divinity
-                                    push();
-                                    //Decorative - Bonfire of the ashen one
-                                    fill(77, 57, 46);
-                                    translate(1680, 400);
-                                    noStroke();
-                                    for (let i = 0; i < 10; i++) {
-                                      ellipse(0, 30, 110, 10);
-                                      rotate(PI / 5);
-                                    }
-                                    pop();
+  //DECORATION - Bonfire of the ashen one - Steps to divinity
+  push();
+  //Decorative - Bonfire of the ashen one
+  fill(77, 57, 46);
+  translate(1680, 400);
+  noStroke();
+  for (let i = 0; i < 10; i++) {
+    ellipse(0, 30, 110, 10);
+    rotate(PI / 5);
+  }
+  pop();
 
-                                    //DECORATION - Bonfire of the ashen one - Never one...
-                                    push();
-                                    //Decorative - Bonfire of the ashen one
-                                    fill(77, 57, 46);
-                                    translate(2480, 400);
-                                    noStroke();
-                                    for (let i = 0; i < 10; i++) {
-                                      ellipse(0, 30, 110, 10);
-                                      rotate(PI / 5);
-                                    }
-                                    pop();
+  //DECORATION - Bonfire of the ashen one - Never one...
+  push();
+  //Decorative - Bonfire of the ashen one
+  fill(77, 57, 46);
+  translate(2480, 400);
+  noStroke();
+  for (let i = 0; i < 10; i++) {
+    ellipse(0, 30, 110, 10);
+    rotate(PI / 5);
+  }
+  pop();
 
-                                    //DECORATION - Bonfire of the ashen one - Without the other...
-                                    push();
-                                    //Decorative - Bonfire of the ashen one
-                                    fill(77, 57, 46);
-                                    translate(2580, 400);
-                                    noStroke();
-                                    for (let i = 0; i < 10; i++) {
-                                      ellipse(0, 30, 110, 10);
-                                      rotate(PI / 5);
-                                    }
-                                    pop();
+  //DECORATION - Bonfire of the ashen one - Without the other...
+  push();
+  //Decorative - Bonfire of the ashen one
+  fill(77, 57, 46);
+  translate(2580, 400);
+  noStroke();
+  for (let i = 0; i < 10; i++) {
+    ellipse(0, 30, 110, 10);
+    rotate(PI / 5);
+  }
+  pop();
 
-                                    //DECORATION - Bonfire of the ashen one - Ascension
-                                    push();
-                                    //Decorative - Bonfire of the ashen one
-                                    fill(77, 57, 46);
-                                    translate(3180, 400);
-                                    noStroke();
-                                    for (let i = 0; i < 10; i++) {
-                                      ellipse(0, 30, 110, 10);
-                                      rotate(PI / 5);
-                                    }
-                                    pop();
+  //DECORATION - Bonfire of the ashen one - Ascension
+  push();
+  //Decorative - Bonfire of the ashen one
+  fill(77, 57, 46);
+  translate(3180, 400);
+  noStroke();
+  for (let i = 0; i < 10; i++) {
+    ellipse(0, 30, 110, 10);
+    rotate(PI / 5);
+  }
+  pop();
 
-                                    //DECORATION - Bonfire of the ashen one - He took and axe and split himself in two...
-                                    push();
-                                    //Decorative - Bonfire of the ashen one
-                                    fill(77, 57, 46);
-                                    translate(3480, 400);
-                                    noStroke();
-                                    for (let i = 0; i < 10; i++) {
-                                      ellipse(0, 30, 110, 10);
-                                      rotate(PI / 5);
-                                    }
-                                    pop();
+  //DECORATION - Bonfire of the ashen one - He took and axe and split himself in two...
+  push();
+  //Decorative - Bonfire of the ashen one
+  fill(77, 57, 46);
+  translate(3480, 400);
+  noStroke();
+  for (let i = 0; i < 10; i++) {
+    ellipse(0, 30, 110, 10);
+    rotate(PI / 5);
+  }
+  pop();
 
-                                    //DECORATION - Bonfire of the ashen one - Jagged Peaks of Mount Vel'Tor
-                                    push();
-                                    //Decorative - Bonfire of the ashen one
-                                    fill(77, 57, 46);
-                                    translate(-480, 400);
-                                    noStroke();
-                                    for (let i = 0; i < 10; i++) {
-                                      ellipse(0, 30, 110, 10);
-                                      rotate(PI / 5);
-                                    }
-                                    pop();
+  //DECORATION - Bonfire of the ashen one - Jagged Peaks of Mount Vel'Tor
+  push();
+  //Decorative - Bonfire of the ashen one
+  fill(77, 57, 46);
+  translate(-480, 400);
+  noStroke();
+  for (let i = 0; i < 10; i++) {
+    ellipse(0, 30, 110, 10);
+    rotate(PI / 5);
+  }
+  pop();
 
-                                    //DECORATION - Bonfire of the ashen one - Shroud of the Black Mist
-                                    push();
-                                    //Decorative - Bonfire of the ashen one
-                                    fill(77, 57, 46);
-                                    translate(-1280, 400);
-                                    noStroke();
-                                    for (let i = 0; i < 10; i++) {
-                                      ellipse(0, 30, 110, 10);
-                                      rotate(PI / 5);
-                                    }
-                                    pop();
+  //DECORATION - Bonfire of the ashen one - Shroud of the Black Mist
+  push();
+  //Decorative - Bonfire of the ashen one
+  fill(77, 57, 46);
+  translate(-1280, 400);
+  noStroke();
+  for (let i = 0; i < 10; i++) {
+    ellipse(0, 30, 110, 10);
+    rotate(PI / 5);
+  }
+  pop();
 
-                                    //DECORATION - Bonfire of the ashen one - Grove of Horrors
-                                    push();
-                                    //Decorative - Bonfire of the ashen one
-                                    fill(77, 57, 46);
-                                    translate(-1780, 400);
-                                    noStroke();
-                                    for (let i = 0; i < 10; i++) {
-                                      ellipse(0, 30, 110, 10);
-                                      rotate(PI / 5);
-                                    }
-                                    pop();
-                                  }
-
+  //DECORATION - Bonfire of the ashen one - Grove of Horrors
+  push();
+  //Decorative - Bonfire of the ashen one
+  fill(77, 57, 46);
+  translate(-1780, 400);
+  noStroke();
+  for (let i = 0; i < 10; i++) {
+    ellipse(0, 30, 110, 10);
+    rotate(PI / 5);
+  }
+  pop();
+}
 
 //Function to draw Stones of the Abyss
 function drawStonesOfTheAbyss() {
-                                  //Decorative - Stones of the Abyss
-                                  //Stone of tainted Earth...
-                                  fill(
-                                    122,
-                                    16,
-                                    122,
-                                    map(gameChar_x, 200, width, 150, 300)
-                                  );
-                                  for (
-                                    var i = 0;
-                                    i < stoneOfAbyss.length;
-                                    i++
-                                  ) {
-                                    rect(
-                                      stoneOfAbyss[i].x_pos,
-                                      stoneOfAbyss[i].y_pos,
-                                      20,
-                                      20,
-                                      8
-                                    );
-                                    rect(
-                                      stoneOfAbyss[i].x_pos,
-                                      stoneOfAbyss[i].y_pos,
-                                      20,
-                                      20,
-                                      8
-                                    );
-                                    rect(
-                                      stoneOfAbyss[i].x_pos,
-                                      stoneOfAbyss[i].y_pos,
-                                      20,
-                                      20,
-                                      8
-                                    );
-                                    rect(
-                                      stoneOfAbyss[i].x_pos,
-                                      stoneOfAbyss[i].y_pos,
-                                      20,
-                                      20,
-                                      8
-                                    );
-                                    rect(
-                                      stoneOfAbyss[i].x_pos,
-                                      stoneOfAbyss[i].y_pos,
-                                      20,
-                                      20,
-                                      8
-                                    );
-                                    rect(
-                                      stoneOfAbyss[i].x_pos,
-                                      stoneOfAbyss[i].y_pos,
-                                      20,
-                                      20,
-                                      8
-                                    );
-                                    rect(
-                                      stoneOfAbyss[i].x_pos,
-                                      stoneOfAbyss[i].y_pos,
-                                      20,
-                                      20,
-                                      8
-                                    );
-                                    rect(
-                                      stoneOfAbyss[i].x_pos,
-                                      stoneOfAbyss[i].y_pos,
-                                      20,
-                                      20,
-                                      8
-                                    );
-                                  }
-                                }
+  //Decorative - Stones of the Abyss
+  //Stone of tainted Earth...
+  fill(122, 16, 122, map(gameChar_x, 200, width, 150, 300));
+  for (var i = 0; i < stoneOfAbyss.length; i++) {
+    rect(stoneOfAbyss[i].x_pos, stoneOfAbyss[i].y_pos, 20, 20, 8);
+    rect(stoneOfAbyss[i].x_pos, stoneOfAbyss[i].y_pos, 20, 20, 8);
+    rect(stoneOfAbyss[i].x_pos, stoneOfAbyss[i].y_pos, 20, 20, 8);
+    rect(stoneOfAbyss[i].x_pos, stoneOfAbyss[i].y_pos, 20, 20, 8);
+    rect(stoneOfAbyss[i].x_pos, stoneOfAbyss[i].y_pos, 20, 20, 8);
+    rect(stoneOfAbyss[i].x_pos, stoneOfAbyss[i].y_pos, 20, 20, 8);
+    rect(stoneOfAbyss[i].x_pos, stoneOfAbyss[i].y_pos, 20, 20, 8);
+    rect(stoneOfAbyss[i].x_pos, stoneOfAbyss[i].y_pos, 20, 20, 8);
+  }
+}
 
-					
 //Function to draw Stones of the Boundless Moons
 function drawStonesOfTheBoundlessMoon() {
-                                          //Stone of boundless Moons...
-                                          fill(
-                                            148,
-                                            94,
-                                            169,
-                                            map(
-                                              gameChar_x,
-                                              200,
-                                              width,
-                                              150,
-                                              300
-                                            )
-                                          );
-                                          for (
-                                            var i = 0;
-                                            i < stoneOfMoon.length;
-                                            i++
-                                          ) {
-                                            ellipse(
-                                              stoneOfMoon[i].x_pos,
-                                              stoneOfMoon[i].y_pos,
-                                              15,
-                                              15
-                                            );
-                                            ellipse(
-                                              stoneOfMoon[i].x_pos,
-                                              stoneOfMoon[i].y_pos,
-                                              15,
-                                              15
-                                            );
-                                            ellipse(
-                                              stoneOfMoon[i].x_pos,
-                                              stoneOfMoon[i].y_pos,
-                                              15,
-                                              15
-                                            );
-                                            ellipse(
-                                              stoneOfMoon[i].x_pos,
-                                              stoneOfMoon[i].y_pos,
-                                              15,
-                                              15
-                                            );
-                                            ellipse(
-                                              stoneOfMoon[i].x_pos,
-                                              stoneOfMoon[i].y_pos,
-                                              15,
-                                              15
-                                            );
-                                            ellipse(
-                                              stoneOfMoon[i].x_pos,
-                                              stoneOfMoon[i].y_pos,
-                                              15,
-                                              15
-                                            );
-                                            ellipse(
-                                              stoneOfMoon[i].x_pos,
-                                              stoneOfMoon[i].y_pos,
-                                              15,
-                                              15
-                                            );
-                                            ellipse(
-                                              stoneOfMoon[i].x_pos,
-                                              stoneOfMoon[i].y_pos,
-                                              15,
-                                              15
-                                            );
-                                          }
-                                        }
+  //Stone of boundless Moons...
+  fill(148, 94, 169, map(gameChar_x, 200, width, 150, 300));
+  for (var i = 0; i < stoneOfMoon.length; i++) {
+    ellipse(stoneOfMoon[i].x_pos, stoneOfMoon[i].y_pos, 15, 15);
+    ellipse(stoneOfMoon[i].x_pos, stoneOfMoon[i].y_pos, 15, 15);
+    ellipse(stoneOfMoon[i].x_pos, stoneOfMoon[i].y_pos, 15, 15);
+    ellipse(stoneOfMoon[i].x_pos, stoneOfMoon[i].y_pos, 15, 15);
+    ellipse(stoneOfMoon[i].x_pos, stoneOfMoon[i].y_pos, 15, 15);
+    ellipse(stoneOfMoon[i].x_pos, stoneOfMoon[i].y_pos, 15, 15);
+    ellipse(stoneOfMoon[i].x_pos, stoneOfMoon[i].y_pos, 15, 15);
+    ellipse(stoneOfMoon[i].x_pos, stoneOfMoon[i].y_pos, 15, 15);
+  }
+}
 
 // ---------------------------------
 // Canyon render and check functions
@@ -2071,40 +1898,37 @@ function drawStonesOfTheBoundlessMoon() {
 
 // Function to draw canyon objects.
 
-function drawCanyon(t_canyon)
-{
-fill(41, 41, 41);
-rect(t_canyon.x_pos, 432, t_canyon.lightTouchedMouth, 150);
-fill(26, 28, 28);
-rect(t_canyon.x_pos, 445, t_canyon.lightTouchedMouth, 165, 10);
+function drawCanyon(t_canyon) {
+  fill(41, 41, 41);
+  rect(t_canyon.x_pos, 432, t_canyon.lightTouchedMouth, 150);
+  fill(26, 28, 28);
+  rect(t_canyon.x_pos, 445, t_canyon.lightTouchedMouth, 165, 10);
 }
 
 // Function to check character is over a canyon.
 
-function checkCanyon(t_canyon)
-{
-if (
-  gameChar_world_x > t_canyon.x_pos &&
-  gameChar_world_x < t_canyon.x_pos + t_canyon.lightTouchedMouth &&
-  gameChar_y >= floorPos_y
-) {
-  isPlummeting = true;
-}
-if (isPlummeting == true) {
-  gameChar_y += 10;
-}
+function checkCanyon(t_canyon) {
+  if (
+    gameChar_world_x > t_canyon.x_pos &&
+    gameChar_world_x < t_canyon.x_pos + t_canyon.lightTouchedMouth &&
+    gameChar_y >= floorPos_y
+  ) {
+    isPlummeting = true;
+  }
+  if (isPlummeting == true) {
+    gameChar_y += 10;
+  }
 }
 
 //Function to draw Snow
 //Snowfall
-  function drawSnow() {
-	  //snow pre canyon
-                  for (var i = 0; i < snowfall.length; i++) {
-                    fill(250, 247, 245);
-                    ellipse(snowfall[i].x_pos,snowfall[i].y_pos,snowfall[i].coverage,45);
-                  }
+function drawSnow() {
+  //snow pre canyon
+  for (var i = 0; i < snowfall.length; i++) {
+    fill(250, 247, 245);
+    ellipse(snowfall[i].x_pos, snowfall[i].y_pos, snowfall[i].coverage, 45);
   }
-
+}
 
 // ----------------------------------
 // Collectable items render and check functions
@@ -2112,186 +1936,176 @@ if (isPlummeting == true) {
 
 // Function to draw collectable objects.
 
-function drawCollectable(t_collectable)
-{
-	    fill(181, 84, 65);
-      ellipse(
-        t_collectable.x_pos_burningRing1,
-        t_collectable.y_pos_burningRing1,
-        33,
-        43
-      );
-      ellipse(
-        t_collectable.x_pos_burningRing2,
-        t_collectable.y_pos_burningRing2,
-        18,
-        23
-      );
-      ellipse(
-        t_collectable.x_pos_burningRing3,
-        t_collectable.y_pos_burningRing3,
-        18,
-        23
-      );
+function drawCollectable(t_collectable) {
+  fill(181, 84, 65);
+  ellipse(
+    t_collectable.x_pos_burningRing1,
+    t_collectable.y_pos_burningRing1,
+    33,
+    43
+  );
+  ellipse(
+    t_collectable.x_pos_burningRing2,
+    t_collectable.y_pos_burningRing2,
+    18,
+    23
+  );
+  ellipse(
+    t_collectable.x_pos_burningRing3,
+    t_collectable.y_pos_burningRing3,
+    18,
+    23
+  );
 
-      //Crown of Eternal Pyre
-      fill(249, 243, 170);
-      ellipse(
-        t_collectable.x_pos_crownOfEternalPyre1,
-        t_collectable.y_pos_crownOfEternalPyre1,
-        30,
-        40
-      );
-      ellipse(
-        t_collectable.x_pos_crownOfEternalPyre2,
-        t_collectable.y_pos_crownOfEternalPyre2,
-        15,
-        20
-      );
-      ellipse(
-        t_collectable.x_pos_crownOfEternalPyre3,
-        t_collectable.y_pos_crownOfEternalPyre3,
-        15,
-        20
-      );
+  //Crown of Eternal Pyre
+  fill(249, 243, 170);
+  ellipse(
+    t_collectable.x_pos_crownOfEternalPyre1,
+    t_collectable.y_pos_crownOfEternalPyre1,
+    30,
+    40
+  );
+  ellipse(
+    t_collectable.x_pos_crownOfEternalPyre2,
+    t_collectable.y_pos_crownOfEternalPyre2,
+    15,
+    20
+  );
+  ellipse(
+    t_collectable.x_pos_crownOfEternalPyre3,
+    t_collectable.y_pos_crownOfEternalPyre3,
+    15,
+    20
+  );
 
-      //Jul'terra
-      //Aura of Latent Flame
-      fill(181, 84, 65);
-      ellipse(
-        t_collectable.x_pos_auraOfLatentFlame,
-        t_collectable.y_pos_auraOfLatentFlame,
-        78,
-        114
-      );
-      //Jul'terra - Eternal One
-      fill(249, 243, 170);
-      ellipse(
-        t_collectable.x_pos_JulTerra,
-        t_collectable.y_pos_JulTerra,
-        75,
-        110
-      );
-      //Eyes of Song
-      fill(243, 209, 111);
-      ellipse(
-        t_collectable.x_pos_eyesOfSong1,
-        t_collectable.y_pos_eyesOfSong1,
-        20,
-        20
-      );
-      ellipse(
-        t_collectable.x_pos_eyesOfSong2,
-        t_collectable.y_pos_eyesOfSong2,
-        20,
-        20
-      );
-      ellipse(
-        t_collectable.x_pos_eyesOfSong3,
-        t_collectable.y_pos_eyesOfSong3,
-        20,
-        20
-      );
-      //She who embodies the Void...
-      fill(181, 84, 65);
-      ellipse(
-        t_collectable.x_pos_embodyTheVoid1,
-        t_collectable.y_pos_embodyTheVoid1,
-        5,
-        5
-      );
-      ellipse(
-        t_collectable.x_pos_embodyTheVoid2,
-        t_collectable.y_pos_embodyTheVoid2,
-        5,
-        5
-      );
-      ellipse(
-        t_collectable.x_pos_embodyTheVoid3,
-        t_collectable.y_pos_embodyTheVoid3,
-        5,
-        5
-      );
-      //A fool and their soul are easily parted...
-      fill(229, 202, 99);
-      ellipse(
-        t_collectable.x_pos_aFoolAndTheirSoul1,
-        t_collectable.y_pos_aFoolAndTheirSoul1,
-        5,
-        5
-      );
-      ellipse(
-        t_collectable.x_pos_aFoolAndTheirSoul2,
-        t_collectable.y_pos_aFoolAndTheirSoul2,
-        5,
-        5
-      );
-      ellipse(
-        t_collectable.x_pos_aFoolAndTheirSoul3,
-        t_collectable.y_pos_aFoolAndTheirSoul3,
-        5
-      );
+  //Jul'terra
+  //Aura of Latent Flame
+  fill(181, 84, 65);
+  ellipse(
+    t_collectable.x_pos_auraOfLatentFlame,
+    t_collectable.y_pos_auraOfLatentFlame,
+    78,
+    114
+  );
+  //Jul'terra - Eternal One
+  fill(249, 243, 170);
+  ellipse(t_collectable.x_pos_JulTerra, t_collectable.y_pos_JulTerra, 75, 110);
+  //Eyes of Song
+  fill(243, 209, 111);
+  ellipse(
+    t_collectable.x_pos_eyesOfSong1,
+    t_collectable.y_pos_eyesOfSong1,
+    20,
+    20
+  );
+  ellipse(
+    t_collectable.x_pos_eyesOfSong2,
+    t_collectable.y_pos_eyesOfSong2,
+    20,
+    20
+  );
+  ellipse(
+    t_collectable.x_pos_eyesOfSong3,
+    t_collectable.y_pos_eyesOfSong3,
+    20,
+    20
+  );
+  //She who embodies the Void...
+  fill(181, 84, 65);
+  ellipse(
+    t_collectable.x_pos_embodyTheVoid1,
+    t_collectable.y_pos_embodyTheVoid1,
+    5,
+    5
+  );
+  ellipse(
+    t_collectable.x_pos_embodyTheVoid2,
+    t_collectable.y_pos_embodyTheVoid2,
+    5,
+    5
+  );
+  ellipse(
+    t_collectable.x_pos_embodyTheVoid3,
+    t_collectable.y_pos_embodyTheVoid3,
+    5,
+    5
+  );
+  //A fool and their soul are easily parted...
+  fill(229, 202, 99);
+  ellipse(
+    t_collectable.x_pos_aFoolAndTheirSoul1,
+    t_collectable.y_pos_aFoolAndTheirSoul1,
+    5,
+    5
+  );
+  ellipse(
+    t_collectable.x_pos_aFoolAndTheirSoul2,
+    t_collectable.y_pos_aFoolAndTheirSoul2,
+    5,
+    5
+  );
+  ellipse(
+    t_collectable.x_pos_aFoolAndTheirSoul3,
+    t_collectable.y_pos_aFoolAndTheirSoul3,
+    5
+  );
 
-      //Veil of Divinity
-      fill(51, 71);
-      rect(
-        t_collectable.x_pos_veilOfDivinity,
-        t_collectable.y_pos_veilOfDivinity,
-        80,
-        50,
-        30
-      );
+  //Veil of Divinity
+  fill(51, 71);
+  rect(
+    t_collectable.x_pos_veilOfDivinity,
+    t_collectable.y_pos_veilOfDivinity,
+    80,
+    50,
+    30
+  );
 
-      //Crowns Gaze
-      fill(214, 245, 244);
-      ellipse(
-        t_collectable.x_pos_crownsGaze1,
-        t_collectable.y_pos_crownsGaze1,
-        10,
-        20
-      );
-      ellipse(
-        t_collectable.x_pos_crownsGaze2,
-        t_collectable.y_pos_crownsGaze2,
-        5,
-        10
-      );
-      ellipse(
-        t_collectable.x_pos_crownsGaze3,
-        t_collectable.y_pos_crownsGaze3,
-        5,
-        10
-      );
+  //Crowns Gaze
+  fill(214, 245, 244);
+  ellipse(
+    t_collectable.x_pos_crownsGaze1,
+    t_collectable.y_pos_crownsGaze1,
+    10,
+    20
+  );
+  ellipse(
+    t_collectable.x_pos_crownsGaze2,
+    t_collectable.y_pos_crownsGaze2,
+    5,
+    10
+  );
+  ellipse(
+    t_collectable.x_pos_crownsGaze3,
+    t_collectable.y_pos_crownsGaze3,
+    5,
+    10
+  );
 
-      //The Watchers, will return...
-      fill(194, 227, 227);
-      ellipse(
-        t_collectable.x_pos_theWatchersReturn1,
-        t_collectable.y_pos_theWatchersReturn1,
-        5,
-        5
-      );
-      ellipse(
-        t_collectable.x_pos_theWatchersReturn2,
-        t_collectable.y_pos_theWatchersReturn2,
-        3,
-        3
-      );
-      ellipse(
-        t_collectable.x_pos_theWatchersReturn3,
-        t_collectable.y_pos_theWatchersReturn3,
-        3,
-        3
-      );
-
+  //The Watchers, will return...
+  fill(194, 227, 227);
+  ellipse(
+    t_collectable.x_pos_theWatchersReturn1,
+    t_collectable.y_pos_theWatchersReturn1,
+    5,
+    5
+  );
+  ellipse(
+    t_collectable.x_pos_theWatchersReturn2,
+    t_collectable.y_pos_theWatchersReturn2,
+    3,
+    3
+  );
+  ellipse(
+    t_collectable.x_pos_theWatchersReturn3,
+    t_collectable.y_pos_theWatchersReturn3,
+    3,
+    3
+  );
 }
 
 // Function to check character has collected an item.
 
-function checkCollectable(t_collectable)
-{
-  //5. a collectable token - eg. a jewel, fruit, coins
-  //... add your code here
+function checkCollectable(t_collectable) {
   if (
     dist(
       gameChar_world_x,
@@ -2364,8 +2178,5 @@ function checkCollectable(t_collectable)
     ) < 150
   ) {
     t_collectable.isFound = true;
-  } 
-
-  
-
+  }
 }
